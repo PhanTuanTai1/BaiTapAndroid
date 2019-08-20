@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editSo1;
     EditText editSo2;
     TextView tvResult;
-    Button btnSum;
+    Button btnSum,btnHieu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         editSo2 = (EditText)findViewById(R.id.editSo2);
         tvResult = (TextView)findViewById(R.id.tvResult);
         btnSum = (Button)findViewById(R.id.btnSum);
+        btnHieu = (Button)findViewById(R.id.btnHieu);
         btnSum.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -29,6 +30,12 @@ public class MainActivity extends AppCompatActivity {
                 editSo2.setText("");
             }
         });
+    }
+    public void TinhHieu(View v){
+        int result = Integer.parseInt(editSo1.getText().toString()) - Integer.parseInt(editSo2.getText().toString());
+        tvResult.setText("Hiệu hai số là : " + result);
+        editSo1.setText("");
+        editSo2.setText("");
     }
 
 
